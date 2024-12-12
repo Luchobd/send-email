@@ -1,9 +1,8 @@
-import * as dotenv from "dotenv";
-dotenv.config();
+import { API_KEY_RESEND, FROM_EMAIL, TO_EMAIL } from "./process.js";
 import { Resend } from "resend";
-import { emailTemplate } from "./template.js";
+import { emailTemplate } from "./template.js"; 
 
-const resend = new Resend(process.env.API_KEY_RESEND);
+const resend = new Resend(API_KEY_RESEND);
 
 export const sendEmail = async ({ name, email, message }) => {
   try {
@@ -16,8 +15,8 @@ export const sendEmail = async ({ name, email, message }) => {
 
     // Configuration of send email.
     const { data, error } = await resend.emails.send({
-      from: process.env.FROM_EMAIL,
-      to: [email], 
+      from: `Portfolio information ${FROM_EMAIL}`,
+      to: [TO_EMAIL],
       subject: subject,
       html: html,
     });

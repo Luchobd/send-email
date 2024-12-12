@@ -1,7 +1,7 @@
 // Template function
 export const emailTemplate = ({ name, email, message }) => {
   return {
-    subject: `${name} gets in touch ${email}`,
+    subject: `Contact information ${name} from ${email}`,
     html: `
           <html>
             <head>
