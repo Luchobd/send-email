@@ -10,6 +10,7 @@ Este es el servidor backend para el formulario de contacto del portfolio. Maneja
 - Crear un archivo .env en la raiz del proyecto con las siguientes variables:
 
 ```
+PORT="local_port"
 API_KEY_RESEND= "tu_api_key_resend"
 FROM_EMAIL= "tu_email_de_origen"
 TO_EMAIL= "tu_email_de_destino"
