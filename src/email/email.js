@@ -1,7 +1,8 @@
-import { API_KEY_RESEND, FROM_EMAIL, TO_EMAIL } from "./process.js";
+import { getEnvVars } from "./process.js";
 import { Resend } from "resend";
 import { emailTemplate } from "./template.js"; 
 
+const { API_KEY_RESEND, FROM_EMAIL, TO_EMAIL } = getEnvVars();
 const resend = new Resend(API_KEY_RESEND);
 
 export const sendEmail = async ({ name, email, message }) => {
